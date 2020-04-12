@@ -15,6 +15,7 @@ This SCSS specifies the layout and style for my developer portfolio.
 @use 'components/css-tricks-fluid-type' as ctft;
 @use 'components/hover-sliders' as hs;
 @use 'components/razor-edge-container' as rec;
+@use 'components/hover-images' as hi;
 
 /******************************************************************************
  Global Elements
@@ -140,6 +141,10 @@ h1 {
     border-top: 2px solid rgba(209, 220, 234, 0.5);
     border-bottom: 2px solid rgba(209, 220, 234, 0.5);
   }
+}
+
+figure {
+  @include hi.hover-images;
 }
 
 form {
