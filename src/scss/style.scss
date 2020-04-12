@@ -1,0 +1,231 @@
+/******************************************************************************
+FSWD:  Christopher B. Zenner
+Date:  04/07/2020
+File:  style.scss -> style.css
+Ver.:  0.1.0 20200407
+       0.2.0 20200409
+
+This SCSS specifies the layout and style for my developer portfolio.
+*******************************************************************************/
+@use 'components/debug-borders' as db;
+@use 'components/freepik-classic-blues-palette' as fcbp;
+@use 'components/pantone-ponder-palette' as ppp;
+@use 'components/pantone-snorkel-palette' as psp;
+@use 'components/portfolio-fonts' as fonts;
+@use 'components/css-tricks-fluid-type' as ctft;
+@use 'components/hover-sliders' as hs;
+@use 'components/razor-edge-container' as rec;
+
+/******************************************************************************
+ Global Elements
+*******************************************************************************/
+$min-width: 320px;
+$max-width: 1280px;
+$min-font: 14px;
+$max-font: 18px;
+
+html {
+  @include ctft.fluid-type($min-width, $max-width, $min-font, $max-font);
+}
+
+body {
+  background-color: white;
+  color: ppp.$monument;
+  font-family: fonts.$sans-serif-font-stack;
+  line-height: 1.5em;
+}
+
+/******************************************************************************
+ Header Elements
+*******************************************************************************/
+header {
+  margin-bottom: 15rem;
+}
+
+#intro-container {
+  @include rec.razor-edge(psp.$classic-blue, 2rem, 3rem, top right, -7deg);
+}
+
+/******************************************************************************
+ Navigation Elements
+*******************************************************************************/
+nav { 
+  ul {
+    font-size: 1.5rem;
+    font-weight: 300;
+    list-style-type: none;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    
+      a {
+        color: inherit;
+        display: inherit;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+            
+        &:active,
+        &:hover {
+          color: white;
+          text-decoration: inherit;
+        }
+
+        @include hs.hover-sliders(psp.$coralessence);
+      }
+    }
+  }
+}
+
+.name {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.pers-stmt {
+  color: inherit;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+
+.title {
+  font-family: 'Inconsolata', monospace;
+}
+
+.portrait {
+  img {
+    border: 10px solid fcbp.$darkest-classic-blue;
+    border-radius: 100%;
+    width: 300px;
+  }
+}
+
+/******************************************************************************
+ Main Content Elements
+*******************************************************************************/
+#dev-projs-container {
+  margin-bottom: 15rem;
+}
+
+#contact-form {
+  // NOTE: At some unspecified point, I may convert the footer container into
+  //       a razor-edge container; thus, I'm leaving the config intact. At this
+  //       point, it's invisible (04/11/2020).
+  margin-bottom: 0;
+
+  @include rec.razor-edge(psp.$cashmere-blue, 2rem, 3rem, bottom left, -7deg, top);
+  @include rec.razor-edge(psp.$cashmere-blue, 2rem, 3rem, top right, -7deg);
+}
+
+h1 {
+  color: psp.$pirate-black;
+
+  &:after {
+    content: '';
+    display: block;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    border-radius: 2px;
+  }
+
+  #contact-form &:after {
+    border-top: 2px solid rgba(209, 220, 234, 0.5);
+    border-bottom: 2px solid rgba(209, 220, 234, 0.5);
+  }
+}
+
+form {
+  label {
+    color: psp.$pirate-black;
+    font-weight: 700;
+  }
+
+  .form-control {
+    border-color: ppp.$monument;
+
+    &:active, &:focus {
+      border-color: psp.$classic-blue;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(15, 76, 129, 1);
+    }
+
+    &::placeholder {
+      color: #eee;
+    }
+  }
+
+  .btn {
+    border-radius: 20px;
+    margin: 0 0.3125rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .btn-outline-submit {
+    border-color: psp.$classic-blue;
+    color: psp.$classic-blue;
+  
+    &:active, &:focus, &:hover {
+      background-color: psp.$classic-blue;
+      color: white;
+    }  
+  }
+
+  .btn-outline-reset {
+    border-color: psp.$coralessence;
+    color: psp.$coralessence;
+  
+    &:active, &:focus, &:hover {
+      background-color: psp.$coralessence;
+      color: white;
+    }  
+  }
+}
+
+/******************************************************************************
+ Footer Elements
+*******************************************************************************/
+#contact-info-container {
+  #inspirational-quote {
+    blockquote {
+      cite {
+        font-style: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  #social-media-group {   
+    .social-media {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2em 0.5em;
+      text-transform: uppercase;
+    }
+  }
+  
+  .fab, .fas {
+    color: psp.$jasmine-green;
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  // See note above.
+  @include rec.razor-edge(psp.$pirate-black, 2rem, 3rem, bottom left, -7deg, top);
+}
+
+#copyright {
+  background-color: #060909;
+  height: 10vh;
+  padding-top: 3vh;
+  width: 100%;
+}
+

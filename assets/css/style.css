@@ -1,0 +1,353 @@
+@charset "UTF-8";
+/******************************************************************************
+ Debug Border Mixin
+
+ This mixin creates a container border for debugging purposes only.
+
+ Arguments:
+ $color - border color
+*******************************************************************************/
+/******************************************************************************
+ [freepikcompany Classic Blues Palette][cb]
+
+ [cb]: https://www.freepik.com/blog/pantone-just-announced-color-the-year-2020/
+*******************************************************************************/
+/******************************************************************************
+ [PANTONE® Ponder Palette][palettes]
+
+ [palettes]: https://www.pantone.com/color-intelligence/color-of-the-year/color-of-the-year-2020-palette-exploration
+*******************************************************************************/
+/******************************************************************************
+ [PANTONE® Snorkel Palette][palettes]
+
+ [palettes]: https://www.pantone.com/color-intelligence/color-of-the-year/color-of-the-year-2020-palette-exploration
+*******************************************************************************/
+/******************************************************************************
+ Portfolio Fonts
+
+ Compliments of [Google Fonts](https://fonts.google.com)
+*******************************************************************************/
+/******************************************************************************
+ [CSS Tricks Fluid Type Mixin][fluid-type] 
+
+ This mixin is compliments of Geoff Graham at CSS Tricks. It allows a minimum
+ and maxmum font-size to be specified, making all sizes in between fluid.
+
+ [fluid-type]: https://css-tricks.com/snippets/css/fluid-typography/
+*******************************************************************************/
+/******************************************************************************
+ Hover Sliders Mixin
+
+ This mixin generates decorative lines with rounded ends that scale on hover 
+ for the specified anchor elements.
+
+ Arguments:
+ $color -> decorative line color
+ $size -> half the decorative line height (NOTE: The decorative line is 
+   constructed from a top and bottom border.)
+ $top-margin -> vertical spacing between the anchor element and the decorative 
+   line
+ $scale-time -> total time for the scale effect to go from 0% to 100%
+*******************************************************************************/
+/******************************************************************************
+ Razor-edge Container Mixin
+
+ This mixin creates a `div` container with a razor-edge (diagonal/slanted). 
+
+ Arguments:
+ $color -> container color
+ $tb-pad -> top and bottom padding inside the container (This is a single
+   unit so the top and bottom padding will always be congruent.)
+ $lr-pad -> left and right padding inside the container (This is a single
+   unit so the left and right padding will always be congruent.)
+ $origin -> origin of the razor edge/slant (for example: top right)
+ $skew -> degree of slant expressed as a `deg` unit (Use a negative value 
+   for a leftward slant and a positive value for a rightward slant.)
+ $razor-pos -> position of razor edge on `div` container (top/bottom)
+*******************************************************************************/
+/******************************************************************************
+FSWD:  Christopher B. Zenner
+Date:  04/07/2020
+File:  style.scss -> style.css
+Ver.:  0.1.0 20200407
+       0.2.0 20200409
+
+This SCSS specifies the layout and style for my developer portfolio.
+*******************************************************************************/
+/******************************************************************************
+ Global Elements
+*******************************************************************************/
+html {
+  font-size: 14px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 960));
+  }
+}
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  background-color: white;
+  color: #84898C;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5em;
+}
+
+/******************************************************************************
+ Header Elements
+*******************************************************************************/
+header {
+  margin-bottom: 15rem;
+}
+
+#intro-container.skewed-container {
+  background: #0F4C81;
+  box-sizing: border-box;
+  padding: 2rem 3rem;
+  position: relative;
+  width: 100%;
+}
+#intro-container.skewed-container:after {
+  background: inherit;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: top right;
+  transform: skewY(-7deg);
+  width: 100%;
+  z-index: -1;
+}
+
+/******************************************************************************
+ Navigation Elements
+*******************************************************************************/
+nav ul {
+  font-size: 1.5rem;
+  font-weight: 300;
+  list-style-type: none;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  color: inherit;
+  display: inherit;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+nav ul li a:active, nav ul li a:hover {
+  color: white;
+  text-decoration: inherit;
+}
+nav ul li a:after {
+  border-bottom: 2px solid #F26B5B;
+  border-radius: 4px;
+  border-top: 2px solid #F26B5B;
+  content: "";
+  display: block;
+  margin-top: 0.25em;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+}
+nav ul li a:hover:after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.name {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.pers-stmt {
+  color: inherit;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+
+.title {
+  font-family: "Inconsolata", monospace;
+}
+
+.portrait img {
+  border: 10px solid #082742;
+  border-radius: 100%;
+  width: 300px;
+}
+
+/******************************************************************************
+ Main Content Elements
+*******************************************************************************/
+#dev-projs-container {
+  margin-bottom: 15rem;
+}
+
+#contact-form {
+  margin-bottom: 0;
+}
+#contact-form.skewed-container {
+  background: #A5B8D0;
+  box-sizing: border-box;
+  padding: 2rem 3rem;
+  position: relative;
+  width: 100%;
+}
+#contact-form.skewed-container:before {
+  background: inherit;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: bottom left;
+  transform: skewY(-7deg);
+  width: 100%;
+  z-index: -1;
+}
+#contact-form.skewed-container {
+  background: #A5B8D0;
+  box-sizing: border-box;
+  padding: 2rem 3rem;
+  position: relative;
+  width: 100%;
+}
+#contact-form.skewed-container:after {
+  background: inherit;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: top right;
+  transform: skewY(-7deg);
+  width: 100%;
+  z-index: -1;
+}
+
+h1 {
+  color: #373838;
+}
+h1:after {
+  content: "";
+  display: block;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  border-radius: 2px;
+}
+#contact-form h1:after {
+  border-top: 2px solid rgba(209, 220, 234, 0.5);
+  border-bottom: 2px solid rgba(209, 220, 234, 0.5);
+}
+
+form label {
+  color: #373838;
+  font-weight: 700;
+}
+form .form-control {
+  border-color: #84898C;
+}
+form .form-control:active, form .form-control:focus {
+  border-color: #0F4C81;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #0f4c81;
+}
+form .form-control::placeholder {
+  color: #eee;
+}
+form .btn {
+  border-radius: 20px;
+  margin: 0 0.3125rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+form .btn-outline-submit {
+  border-color: #0F4C81;
+  color: #0F4C81;
+}
+form .btn-outline-submit:active, form .btn-outline-submit:focus, form .btn-outline-submit:hover {
+  background-color: #0F4C81;
+  color: white;
+}
+form .btn-outline-reset {
+  border-color: #F26B5B;
+  color: #F26B5B;
+}
+form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline-reset:hover {
+  background-color: #F26B5B;
+  color: white;
+}
+
+/******************************************************************************
+ Footer Elements
+*******************************************************************************/
+#contact-info-container #inspirational-quote blockquote cite {
+  font-style: normal;
+  text-transform: uppercase;
+}
+#contact-info-container #social-media-group .social-media {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2em 0.5em;
+  text-transform: uppercase;
+}
+#contact-info-container .fab, #contact-info-container .fas {
+  color: #7FC844;
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+#contact-info-container.skewed-container {
+  background: #373838;
+  box-sizing: border-box;
+  padding: 2rem 3rem;
+  position: relative;
+  width: 100%;
+}
+#contact-info-container.skewed-container:before {
+  background: inherit;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: bottom left;
+  transform: skewY(-7deg);
+  width: 100%;
+  z-index: -1;
+}
+
+#copyright {
+  background-color: #060909;
+  height: 10vh;
+  padding-top: 3vh;
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
