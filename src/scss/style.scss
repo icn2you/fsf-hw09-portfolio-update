@@ -22,7 +22,7 @@ This SCSS specifies the layout and style for my developer portfolio.
 *******************************************************************************/
 $min-width: 320px;
 $max-width: 1280px;
-$min-font: 14px;
+$min-font: 16px;
 $max-font: 18px;
 
 html {
@@ -87,6 +87,7 @@ nav {
   color: white;
   font-size: 3.5rem;
   font-weight: 600;
+  line-height: 1.25em;
   margin-bottom: 3rem;
 }
 
@@ -167,7 +168,12 @@ form {
   }
 
   .btn {
-    border-radius: 20px;
+    // NOTE: The `border-radius` setting is **not** a mistake. It is set so to
+    //       ensure the buttons always have a consistent pill shape. Thanks to
+    //       Chad Ostrowski for [this idea][pill-btn-url].
+    //
+    // [pill-btn-url]: https://bits.theorem.co/css-pro-tips-responsive-font-sizes-and-when-to-use-which-units/ 
+    border-radius: 1000px;
     margin: 0 0.3125rem;
     padding-left: 1rem;
     padding-right: 1rem;

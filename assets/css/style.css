@@ -83,11 +83,11 @@ This SCSS specifies the layout and style for my developer portfolio.
  Global Elements
 *******************************************************************************/
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(14px + 4 * ((100vw - 320px) / 960));
+    font-size: calc(16px + 2 * ((100vw - 320px) / 960));
   }
 }
 @media screen and (min-width: 1280px) {
@@ -182,6 +182,7 @@ nav ul li a:hover:after {
   color: white;
   font-size: 3.5rem;
   font-weight: 600;
+  line-height: 1.25em;
   margin-bottom: 3rem;
 }
 
@@ -301,7 +302,7 @@ form .form-control::placeholder {
   color: #eee;
 }
 form .btn {
-  border-radius: 20px;
+  border-radius: 1000px;
   margin: 0 0.3125rem;
   padding-left: 1rem;
   padding-right: 1rem;
