@@ -20,11 +20,16 @@
     content: '';
     display: block;
     margin-top: $top-margin;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
     transform: scaleX(0);
-    transition: transform $time ease-in-out;
+    -webkit-transition: -webkit-transform $scale-time ease-in-out;
+    transition: transform $scale-time ease-in-out;
   }
   
   &:hover:after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
   }
 }
