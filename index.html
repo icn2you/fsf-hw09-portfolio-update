@@ -29,11 +29,146 @@
 
   <!--================================= BODY =================================-->
   <body>
-    <header></header>
+    <!-- Header -->
+    <header>
+      <div id="intro-container" class="skewed-container">
+        <div class="container">
+          <div class="row mt-4 justify-content-between">
+            <div class="col-4"></div>
+            <div class="col-6 text-right">
+              <!-- Site Navigation -->
+              <nav>
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Portfolio</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>    
+          </div>
+          <div class="row mt-2 mb-4 justify-content-between align-items-center">
+            <div class="col-8">
+              <div id="intro">
+                <div class="name">Hi. My name is Chris.</div>
+                <div class="pers-stmt">I'm a <span class="title">&#60;title&#62;Web Developer&#60;&#47;title&#62;,</span></div>
+                <div class="pers-stmt">passionate about making the world</div>
+                <div class="pers-stmt">better through code.</div>
+              </div>
+            </div>
+            <div class="col-4 text-right">
+              <div class="portrait">
+                <img src="src/img/avatar-me-2017.png" alt="Christopher Zenner" class="img-fluid">
+              </div>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <main></main>
+    <!-- Primary Content -->
+    <main>
+      <div id="dev-projs-container" class="skewed-container">
+        <div class="container">
+          <div class="row">
+            <h1 class="col-12">Portfolio</h1>
+          </div>
+          <div class="row mt-2 mb-4 justify-content-around align-items-center">
+            <div class="col-3">
+              <figure id="word-guess" class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+            <div class="col-3">
+              <figure class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+            <div class="col-3">
+              <figure class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="row mt-2 mb-4 justify-content-around align-items-center">
+            <div class="col-3">
+              <figure class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+            <div class="col-3">
+              <figure class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+            <div class="col-3">
+              <figure class="photo-box">
+                <img src="src/img/laptop-orig-xxl.jpg" alt="MacBook Pro" class="img-fluid">
+                <figcaption class="photo-label text-center">MacBook Pro</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contact-form" class="skewed-container">
+        <div class="container">
+          <div class="row">
+            <h1 class="col-12">Contact Me</h1>
+          </div>
+          <div class="row mt-2 mb-4 justify-content-center">
+            <div class="col-8">
+              <form>
+                <div class="form-group">
+                  <label for="contact-name">Name</label>
+                  <input type="text" class="form-control" id="contact-name" placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email</label>
+                  <input type="email" class="form-control" id="contact-email" placeholder="jane.smith@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="contact-msg">Message</label>
+                  <textarea class="form-control" id="contact-msg" rows="10" placeholder="Talk to me!"></textarea>
+                </div>
+                <div class="d-flex form-group justify-content-center" id="form-buttons">
+                  <input class="btn btn-outline-submit" type="submit" value="Submit">
+                  <input class="btn btn-outline-reset" type="reset" value="Reset">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </main>
 
-    <footer></footer>
+    <!-- Footer -->
+    <footer>
+      <div id="contact-info-container" class="skewed-container">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+              <div id="inspirational-quote" class="col-6 mr-4">
+                <blockquote>
+                  &ldquo;Don't ask yourself what the world needs. Ask yourself what makes you come alive, and go do that, because what the world needs is people who have come alive.&rdquo;
+                  <div class="text-right">&mdash; <cite title="Howard Thurman">Howard Thurman</cite></div>
+                </blockquote>
+              </div>
+              <div id="social-media-group" class="col-6e">
+                <div class="social-media align-middle"><i class="fas fa-envelope fa-2x fa-fw align-middle"></i> Email </div>
+                <div class="social-media align-middle"><i class="fab fa-github fa-2x fa-fw align-middle"></i> GitHub</div>
+                <div class="social-media align-middle"><i class="fab fa-linkedin-in fa-2x fa-fw align-middle"></i> LinkedIn</div>
+                <div class="social-media align-middle"><i class="fab fa-twitter fa-2x fa-fw align-middle"></i> Twitter</div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="copyright" class="text-center">
+        &copy; 2020 Christopher B. Zenner. All rights reserved.
+      </div>
+    </footer>
     
     <!-- jQuery 3.4.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
