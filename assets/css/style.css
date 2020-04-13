@@ -286,6 +286,10 @@ figure.photo-box:hover .top-img {
   cursor: pointer;
   display: inline;
 }
+figure:active figcaption, figure:focus figcaption, figure:hover figcaption {
+  color: #060909;
+  font-weight: 600;
+}
 
 form label {
   color: #373838;

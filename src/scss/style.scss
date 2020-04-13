@@ -24,6 +24,7 @@ $min-width: 320px;
 $max-width: 1280px;
 $min-font: 16px;
 $max-font: 18px;
+$black: #060909;
 
 html {
   @include ctft.fluid-type($min-width, $max-width, $min-font, $max-font);
@@ -145,6 +146,13 @@ h1 {
 
 figure {
   @include hi.hover-images;
+
+  &:active, &:focus, &:hover {
+    figcaption {
+      color: $black;
+      font-weight: 600;
+    }
+  }
 }
 
 form {
@@ -242,7 +250,7 @@ form {
 }
 
 #copyright {
-  background-color: #060909;
+  background-color: $black;
   height: 10vh;
   padding-top: 3vh;
   width: 100%;
