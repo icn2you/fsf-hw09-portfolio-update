@@ -83,11 +83,11 @@ This SCSS specifies the layout and style for my developer portfolio.
  Global Elements
 *******************************************************************************/
 html {
-  font-size: 16px;
+  font-size: 15px;
 }
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(16px + 2 * ((100vw - 320px) / 960));
+    font-size: calc(15px + 3 * ((100vw - 320px) / 960));
   }
 }
 @media screen and (min-width: 1280px) {
@@ -356,14 +356,12 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
   width: 3rem;
 }
 #contact-info-container #inspirational-quote blockquote:after {
+  color: #060909;
   content: "— " attr(cite);
   display: block;
-  text-align: right;
   font-size: 0.875em;
-  color: #7FC844;
-}
-#contact-info-container #inspirational-quote blockquote cite {
-  font-style: normal;
+  font-weight: 700;
+  text-align: right;
   text-transform: uppercase;
 }
 #contact-info-container #social-media-group .social-media {
