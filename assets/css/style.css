@@ -87,6 +87,7 @@ Date:  04/07/2020
 File:  style.scss -> style.css
 Ver.:  0.1.0 20200407
        0.2.0 20200409
+       0.3.0 20200413
 
 This SCSS specifies the layout and style for my developer portfolio.
 *******************************************************************************/
@@ -211,7 +212,7 @@ nav ul li a:hover:after {
 .portrait img {
   border: 10px solid #082742;
   border-radius: 100%;
-  width: 300px;
+  width: 360px;
 }
 
 /******************************************************************************
@@ -273,8 +274,8 @@ h1 {
 h1:after {
   content: "";
   display: block;
-  border-top: 2px solid #eee;
-  border-bottom: 2px solid #eee;
+  border-top: 2px solid #EEE;
+  border-bottom: 2px solid #EEE;
   border-radius: 2px;
 }
 #contact-form h1:after {
@@ -342,21 +343,29 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
 /******************************************************************************
  Footer Elements
 *******************************************************************************/
+#contact-info-container a {
+  color: inherit;
+  text-decoration: none;
+}
+#contact-info-container a:active, #contact-info-container a:focus, #contact-info-container a:hover {
+  color: white;
+  text-decoration: inherit;
+}
 #contact-info-container #biosketch h2 {
   color: #7FC844;
+  font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 0.5em;
   margin-top: 2rem;
 }
-#contact-info-container #biosketch h2:after {
-  content: "";
-  display: block;
-  border-top: 2px solid #4E595F;
-  border-bottom: 2px solid #4E595F;
-  border-radius: 2px;
-}
 #contact-info-container #biosketch p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+#contact-info-container #biosketch #resume {
   margin-bottom: 3em;
+}
+#contact-info-container #biosketch #resume .fa-file-pdf {
+  margin-right: 0.25em;
 }
 #contact-info-container #inspirational-quote blockquote {
   border-color: #060909;
@@ -396,14 +405,18 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
   font-weight: 700;
   margin: 2rem 0.5em;
   text-transform: uppercase;
-}
-#contact-info-container #social-media-group .social-media a {
-  color: inherit;
-  text-decoration: none;
-}
-#contact-info-container #social-media-group .social-media a:active, #contact-info-container #social-media-group .social-media a:focus, #contact-info-container #social-media-group .social-media a:hover {
-  color: white;
-  text-decoration: inherit;
+  /* NOTE: If I decide to style my biosketch links differently in the future,
+  //       I'll reimplement this styling. (04/13/2020)
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:active, a:focus, a:hover {
+    color: white;
+    text-decoration: inherit;
+  }
+  */
 }
 #contact-info-container .fab, #contact-info-container .fas {
   color: #7FC844;

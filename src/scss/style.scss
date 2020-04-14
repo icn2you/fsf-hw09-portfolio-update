@@ -4,6 +4,7 @@ Date:  04/07/2020
 File:  style.scss -> style.css
 Ver.:  0.1.0 20200407
        0.2.0 20200409
+       0.3.0 20200413
 
 This SCSS specifies the layout and style for my developer portfolio.
 *******************************************************************************/
@@ -27,6 +28,7 @@ $min-font: 15px;
 $min-width: 320px;
 $almost-black: #060909;
 $seriously-gray: #4E595F;
+$slightly-gray: #EEE;
 
 html {
   @include ctft.fluid-type($min-width, $max-width, $min-font, $max-font);
@@ -108,7 +110,7 @@ nav {
   img {
     border: 10px solid fcbp.$darkest-classic-blue;
     border-radius: 100%;
-    width: 300px;
+    width: 360px;
   }
 }
 
@@ -122,7 +124,7 @@ nav {
 #contact-form {
   // NOTE: At some unspecified point, I may convert the footer container into
   //       a razor-edge container; thus, I'm leaving the config intact. At this
-  //       point, it's invisible (04/11/2020).
+  //       point, it's invisible. (04/11/2020)
   margin-bottom: 0;
 
   @include rec.razor-edge(psp.$cashmere-blue, 2rem, 3rem, bottom left, -7deg, top);
@@ -132,13 +134,7 @@ nav {
 h1 {
   color: psp.$pirate-black;
 
-  &:after {
-    content: '';
-    display: block;
-    border-top: 2px solid #eee;
-    border-bottom: 2px solid #eee;
-    border-radius: 2px;
-  }
+  @include rbb.rounded-bottom-border($slightly-gray, 2px);
 
   #contact-form &:after {
     border-top: 2px solid rgba(209, 220, 234, 0.5);
@@ -213,18 +209,39 @@ form {
  Footer Elements
 *******************************************************************************/
 #contact-info-container {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:active, a:focus, a:hover {
+    color: white;
+    text-decoration: inherit;
+  }
+
   #biosketch {
     h2 {
       color: psp.$jasmine-green;
+      font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 0.5em;
       margin-top: 2rem;
 
-      @include rbb.rounded-bottom-border($seriously-gray, 2px);
+      // NOTE: It was nice while it lasted, but good design demands scrutiny!
+      //       (04/13/2020)
+      // @include rbb.rounded-bottom-border($seriously-gray, 2px);
     }
 
     p {
+      margin-bottom: 1em;
+      text-align: justify;
+    }
+
+    #resume {
       margin-bottom: 3em;
+
+      .fa-file-pdf {
+        margin-right: 0.25em;
+      }
     }
   }
 
@@ -234,7 +251,6 @@ form {
     //
     // [quote-url]: https://1stwebdesigner.com/css-snippets-blockquotes/
     // [codepen-url]: https://codepen.io/harmputman/pen/IpAnb
-
     blockquote {
       border-color: $almost-black;
       border-style: solid;
@@ -279,6 +295,8 @@ form {
       margin: 2rem 0.5em;
       text-transform: uppercase;
 
+      /* NOTE: If I decide to style my biosketch links differently in the future,
+      //       I'll reimplement this styling. (04/13/2020)
       a {
         color: inherit;
         text-decoration: none;
@@ -288,6 +306,7 @@ form {
         color: white;
         text-decoration: inherit;
       }
+      */
     }
   }
   
@@ -307,4 +326,3 @@ form {
   padding-top: 3vh;
   width: 100%;
 }
-
