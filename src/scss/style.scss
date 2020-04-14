@@ -13,9 +13,10 @@ This SCSS specifies the layout and style for my developer portfolio.
 @use 'components/pantone-snorkel-palette' as psp;
 @use 'components/portfolio-fonts' as fonts;
 @use 'components/css-tricks-fluid-type' as ctft;
-@use 'components/hover-sliders' as hs;
 @use 'components/razor-edge-container' as rec;
+@use 'components/hover-sliders' as hs;
 @use 'components/hover-images' as hi;
+@use 'components/rounded-bottom-borders' as rbb;
 
 /******************************************************************************
  Global Elements
@@ -25,7 +26,7 @@ $max-width: 1280px;
 $min-font: 15px;
 $min-width: 320px;
 $almost-black: #060909;
-$seriously-gray: #141515;
+$seriously-gray: #4E595F;
 
 html {
   @include ctft.fluid-type($min-width, $max-width, $min-font, $max-font);
@@ -212,6 +213,21 @@ form {
  Footer Elements
 *******************************************************************************/
 #contact-info-container {
+  #biosketch {
+    h2 {
+      color: psp.$jasmine-green;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      margin-top: 2rem;
+
+      @include rbb.rounded-bottom-border($seriously-gray, 2px);
+    }
+
+    p {
+      margin-bottom: 3em;
+    }
+  }
+
   #inspirational-quote {
     // Thanks to [Jake Rocheleau][quote-url] and [Harm Putman][codepen-url] for
     // this lovely `blockquote` style.
@@ -245,7 +261,7 @@ form {
       }
 
       &:after {
-        color: $almost-black; // psp.$jasmine-green;
+        color: $almost-black;
         content: '\2014\2002' attr(cite);
         display: block;
         font-size: 0.875em;
@@ -260,7 +276,7 @@ form {
     .social-media {
       font-size: 1.5rem;
       font-weight: 700;
-      margin: 2em 0.5em;
+      margin: 2rem 0.5em;
       text-transform: uppercase;
 
       a {

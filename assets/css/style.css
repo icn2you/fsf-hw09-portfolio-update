@@ -36,20 +36,6 @@
  [fluid-type]: https://css-tricks.com/snippets/css/fluid-typography/
 *******************************************************************************/
 /******************************************************************************
- Hover Sliders Mixin
-
- This mixin generates decorative lines with rounded ends that scale on hover 
- for the specified anchor elements.
-
- Arguments:
- $color -> decorative line color
- $size -> half the decorative line height (NOTE: The decorative line is 
-   constructed from a top and bottom border.)
- $top-margin -> vertical spacing between the anchor element and the decorative 
-   line
- $scale-time -> total time for the scale effect to go from 0% to 100%
-*******************************************************************************/
-/******************************************************************************
  Razor-edge Container Mixin
 
  This mixin creates a `div` container with a razor-edge (diagonal/slanted). 
@@ -66,9 +52,34 @@
  $razor-pos -> position of razor edge on `div` container (top/bottom)
 *******************************************************************************/
 /******************************************************************************
+ Hover Sliders Mixin
+
+ This mixin generates decorative lines with rounded ends that scale on hover 
+ for the specified anchor elements.
+
+ Arguments:
+ $color -> decorative line color
+ $size -> half the decorative line height (NOTE: The decorative line is 
+   constructed from a top and bottom border.)
+ $top-margin -> vertical spacing between the anchor element and the decorative 
+   line
+ $scale-time -> total time for the scale effect to go from 0% to 100%
+*******************************************************************************/
+/******************************************************************************
  Hover Images Mixin
 
  This mixin swaps the specified images on hover.
+*******************************************************************************/
+/******************************************************************************
+ Rounded Bottom Borders Mixin
+
+ This mixin generates bottom borders with rounded ends that are intended to be
+ used with `h1` through `h6` elements.
+
+ Arguments:
+ $color -> bottom border color
+ $size -> half the decorative line height (NOTE: The decorative line is 
+   constructed from a top and bottom border.)
 *******************************************************************************/
 /******************************************************************************
 FSWD:  Christopher B. Zenner
@@ -331,6 +342,22 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
 /******************************************************************************
  Footer Elements
 *******************************************************************************/
+#contact-info-container #biosketch h2 {
+  color: #7FC844;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  margin-top: 2rem;
+}
+#contact-info-container #biosketch h2:after {
+  content: "";
+  display: block;
+  border-top: 2px solid #4E595F;
+  border-bottom: 2px solid #4E595F;
+  border-radius: 2px;
+}
+#contact-info-container #biosketch p {
+  margin-bottom: 3em;
+}
 #contact-info-container #inspirational-quote blockquote {
   border-color: #060909;
   border-style: solid;
@@ -367,7 +394,7 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
 #contact-info-container #social-media-group .social-media {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 2em 0.5em;
+  margin: 2rem 0.5em;
   text-transform: uppercase;
 }
 #contact-info-container #social-media-group .social-media a {
