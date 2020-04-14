@@ -20,11 +20,12 @@ This SCSS specifies the layout and style for my developer portfolio.
 /******************************************************************************
  Global Elements
 *******************************************************************************/
-$min-width: 320px;
+$max-font: 18px;
 $max-width: 1280px;
 $min-font: 16px;
-$max-font: 18px;
-$black: #060909;
+$min-width: 320px;
+$almost-black: #060909;
+$seriously-gray: #141515;
 
 html {
   @include ctft.fluid-type($min-width, $max-width, $min-font, $max-font);
@@ -149,7 +150,7 @@ figure {
 
   &:active, &:focus, &:hover {
     figcaption {
-      color: $black;
+      color: $almost-black;
       font-weight: 600;
     }
   }
@@ -212,7 +213,45 @@ form {
 *******************************************************************************/
 #contact-info-container {
   #inspirational-quote {
+    // Thanks to [Jake Rocheleau][quote-url] and [Harm Putman][codepen-url] for
+    // this lovely `blockquote` style.
+    //
+    // [quote-url]: https://1stwebdesigner.com/css-snippets-blockquotes/
+    // [codepen-url]: https://codepen.io/harmputman/pen/IpAnb
+
     blockquote {
+      border-color: $almost-black;
+      border-style: solid;
+      border-width: 2px 0;
+      display: block;
+      margin: 1.5em 0;
+      padding: 1.5em 0 0.5em;
+      position: relative;
+
+      &:before {
+        background: psp.$pirate-black;
+        color: $almost-black;
+        content: '\201C';
+        font: 700 4em/0.9em 'Playfair Display SC', serif;
+        left: 50%;
+        height: 2rem;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 3rem;
+      }
+
+      &:after {
+        content: '\2014\2002' attr(cite);
+        display: block;
+        text-align: right;
+        font-size: 0.875em;
+        color: psp.$jasmine-green;
+      }
+
       cite {
         font-style: normal;
         text-transform: uppercase;
@@ -250,7 +289,7 @@ form {
 }
 
 #copyright {
-  background-color: $black;
+  background-color: $almost-black;
   height: 10vh;
   padding-top: 3vh;
   width: 100%;

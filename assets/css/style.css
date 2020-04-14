@@ -331,6 +331,37 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
 /******************************************************************************
  Footer Elements
 *******************************************************************************/
+#contact-info-container #inspirational-quote blockquote {
+  border-color: #060909;
+  border-style: solid;
+  border-width: 2px 0;
+  display: block;
+  margin: 1.5em 0;
+  padding: 1.5em 0 0.5em;
+  position: relative;
+}
+#contact-info-container #inspirational-quote blockquote:before {
+  background: #373838;
+  color: #060909;
+  content: "“";
+  font: 700 4em/0.9em "Playfair Display SC", serif;
+  left: 50%;
+  height: 2rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 3rem;
+}
+#contact-info-container #inspirational-quote blockquote:after {
+  content: "— " attr(cite);
+  display: block;
+  text-align: right;
+  font-size: 0.875em;
+  color: #7FC844;
+}
 #contact-info-container #inspirational-quote blockquote cite {
   font-style: normal;
   text-transform: uppercase;
