@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/***********************************************************************
+ Portfolio Fonts
+
+ Compliments of [Google Fonts](https://fonts.google.com)
+***********************************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap");
 /******************************************************************************
  Debug Border Mixin
 
@@ -21,11 +27,6 @@
  [PANTONE® Snorkel Palette][palettes]
 
  [palettes]: https://www.pantone.com/color-intelligence/color-of-the-year/color-of-the-year-2020-palette-exploration
-*******************************************************************************/
-/******************************************************************************
- Portfolio Fonts
-
- Compliments of [Google Fonts](https://fonts.google.com)
 *******************************************************************************/
 /******************************************************************************
  [CSS Tricks Fluid Type Mixin][fluid-type] 
@@ -81,19 +82,20 @@
  $size -> half the decorative line height (NOTE: The decorative line is 
    constructed from a top and bottom border.)
 *******************************************************************************/
-/******************************************************************************
+/***********************************************************************
 FSWD:  Christopher B. Zenner
 Date:  04/07/2020
 File:  style.scss -> style.css
 Ver.:  0.1.0 20200407
        0.2.0 20200409
        0.3.0 20200413
+       0.4.0 20200517
 
 This SCSS specifies the layout and style for my developer portfolio.
-*******************************************************************************/
-/******************************************************************************
+***********************************************************************/
+/***********************************************************************
  Global Elements
-*******************************************************************************/
+***********************************************************************/
 html {
   font-size: 15px;
 }
@@ -115,9 +117,9 @@ body {
   line-height: 1.5em;
 }
 
-/******************************************************************************
+/***********************************************************************
  Header Elements
-*******************************************************************************/
+***********************************************************************/
 header {
   margin-bottom: 15rem;
 }
@@ -144,9 +146,9 @@ header {
   z-index: -1;
 }
 
-/******************************************************************************
+/***********************************************************************
  Navigation Elements
-*******************************************************************************/
+***********************************************************************/
 nav ul {
   font-size: 1.5rem;
   font-weight: 300;
@@ -190,6 +192,9 @@ nav ul li a:hover:after {
   transform: scaleX(1);
 }
 
+/***********************************************************************
+ Main Content Elements
+***********************************************************************/
 .name {
   color: white;
   font-size: 3.5rem;
@@ -215,11 +220,58 @@ nav ul li a:hover:after {
   width: 360px;
 }
 
-/******************************************************************************
- Main Content Elements
-*******************************************************************************/
+h1 {
+  color: #373838;
+}
+h1:after {
+  content: "";
+  display: block;
+  border-top: 2px solid #EEE;
+  border-bottom: 2px solid #EEE;
+  border-radius: 2px;
+}
+#contact-form h1:after {
+  border-top: 2px solid rgba(209, 220, 234, 0.5);
+  border-bottom: 2px solid rgba(209, 220, 234, 0.5);
+}
+
 #dev-projs-container {
   margin-bottom: 15rem;
+}
+
+figure.photo-box {
+  display: inline-block;
+  position: relative;
+}
+figure.photo-box .top-img {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+figure.photo-box:hover .top-img {
+  cursor: pointer;
+  display: inline;
+}
+figure:active figcaption, figure:focus figcaption, figure:hover figcaption {
+  color: #060909;
+  font-weight: 600;
+}
+
+.github-repo {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.github-repo .fab, .github-repo .fas {
+  font-size: 0.875rem;
+}
+.github-repo a {
+  color: inherit;
+  text-decoration: none;
+}
+.github-repo a:active, .github-repo a:focus, .github-repo a:hover {
+  color: #060909;
 }
 
 #contact-form {
@@ -268,41 +320,6 @@ nav ul li a:hover:after {
   z-index: -1;
 }
 
-h1 {
-  color: #373838;
-}
-h1:after {
-  content: "";
-  display: block;
-  border-top: 2px solid #EEE;
-  border-bottom: 2px solid #EEE;
-  border-radius: 2px;
-}
-#contact-form h1:after {
-  border-top: 2px solid rgba(209, 220, 234, 0.5);
-  border-bottom: 2px solid rgba(209, 220, 234, 0.5);
-}
-
-figure.photo-box {
-  display: inline-block;
-  position: relative;
-}
-figure.photo-box .top-img {
-  display: none;
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 99;
-}
-figure.photo-box:hover .top-img {
-  cursor: pointer;
-  display: inline;
-}
-figure:active figcaption, figure:focus figcaption, figure:hover figcaption {
-  color: #060909;
-  font-weight: 600;
-}
-
 form label {
   color: #373838;
   font-weight: 700;
@@ -340,9 +357,9 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
   color: white;
 }
 
-/******************************************************************************
+/***********************************************************************
  Footer Elements
-*******************************************************************************/
+***********************************************************************/
 #contact-info-container a {
   color: inherit;
   text-decoration: none;
@@ -405,8 +422,8 @@ form .btn-outline-reset:active, form .btn-outline-reset:focus, form .btn-outline
   font-weight: 700;
   margin: 2rem 0.5em;
   text-transform: uppercase;
-  /* NOTE: If I decide to style my biosketch links differently in the future,
-  //       I'll reimplement this styling. (04/13/2020)
+  /* NOTE: If I decide to style my biosketch links differently in
+  //       the future, I'll reimplement this styling. (04/13/2020)
   a {
     color: inherit;
     text-decoration: none;
